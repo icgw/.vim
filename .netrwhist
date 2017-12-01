@@ -1,8 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/Users/icgw/Desktop/workspace'
-let g:netrw_dirhist_2='/Users/icgw/Desktop/code_space'
-let g:netrw_dirhist_3='/Users/icgw/.vim/bundle/vim-airline'
-let g:netrw_dirhist_4='/Users/icgw/.vim/bundle/vim-airline/autoload/airline'
-let g:netrw_dirhist_5='/Users/icgw/Desktop/icgw.github.io/pages/Complex_variable'
-let g:netrw_dirhist_6='/Users/icgw/.vim'
