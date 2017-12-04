@@ -1,12 +1,19 @@
+" 
+" Author: Guowei Chen
+"
+
+" Use Vim settings, rather than Vi settings (much better!).
+set nocompatible
+
 set number
 
 syntax enable
 syntax on
 
-" set the width of the tab
+" I like 4 stops
 set tabstop=4
 
-" Set the width of indent
+" I like 4 spaces for indenting
 set shiftwidth=4
 
 set encoding=utf-8
@@ -14,13 +21,18 @@ set encoding=utf-8
 " Match the bracket
 set showmatch
 
-" Show the ruler
+" show the cursor position all the time 
 set ruler
+
+" do not keep a backup file
+set nobackup
+set nowritebackup
 
 execute pathogen#infect()
 filetype plugin indent on
 autocmd FileType python setlocal expandtab smarttab softtabstop=4
 
+" terminal color
 set t_Co=256
 colorscheme molokai
 
@@ -35,3 +47,4 @@ let g:airline_section_b = '%{strftime("%c")}'
 let g:airline_section_y = 'BN: %{bufnr("%")}'
 
 let g:airline_theme = 'molokai'
+
