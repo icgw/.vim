@@ -33,7 +33,10 @@ set t_Co=256
 colorscheme molokai
 
 " 将 tab 显示为 >-
-set list listchars=tab:>-
+ret list listchars=tab:>-
+
+" 自动检测文件类型
+filetype plugin on
 
 " ----------- 设置常用快捷键 -------------- "
 
@@ -46,6 +49,8 @@ vnoremap <c-j> :m'>+<CR>gv=gv
 nnoremap <c-k> :m-2<CR>==
 inoremap <c-k> <Esc>:m+<CR>==gi
 vnoremap <c-k> :m-2<CR>gv=gv
+
+let mapleader = ";"
 
 " ----------------------------------------- "
 
@@ -71,6 +76,11 @@ endif
 
 " 状态栏插件
 Plug 'vim-airline/vim-airline'
+" 状态栏主题插件
+Plug 'vim-airline/vim-airline-themes'
+
+" 注释助手插件
+Plug 'scrooloose/nerdcommenter'
 
 call plug#end()
 " ----------------------------------------- "
@@ -80,3 +90,28 @@ let g:deoplete#enable_at_startup = 1
 
 " 开启插件 vim-airline
 let g:airline#extensions#tabline#enabled = 1
+" 设置状态栏的主题
+let g:airline_theme = 'molokai'
+
+" --------------- 开启 NERDComment ------------ "
+" Add spaces after comment delimiters by default
+let g:NERDSpaceDelims = 1
+
+" Use compact syntax for prettified multi-line comments
+let g:NERDCompactSexyComs = 1
+
+" Align line-wise comment delimiters flush left instead of following code indentation
+let g:NERDDefaultAlign = 'left'
+
+" Set a language to use its alternate delimiters by default
+let g:NERDAltDelims_java = 1
+
+" Add your own custom formats or override the defaults
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+
+" Allow commenting and inverting empty lines (useful when commenting a region)
+let g:NERDCommentEmptyLines = 1
+
+" Enable trimming of trailing whitespace when uncommenting
+let g:NERDTrimTrailingWhitespace = 1
+" ---------------------------------------------- "

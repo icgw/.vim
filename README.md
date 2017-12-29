@@ -1,4 +1,4 @@
-快捷键一览
+快键一览
 ----------
 > `C` 表示 `Ctrl`
 
@@ -10,18 +10,28 @@
 
 `C-b` 往回翻页
 
+`;-cc` 注释
+
+`;-cu` 取消注释
 
 插件
 ----
 airline
-:美化状态栏
+
+: 美化状态栏
 
 deoplete
+
 : vim 的版本 8+，需要 python3 支持；需要 neovim-python 
 
+NERDComment
+
+: 注释插件
 
 从vim迁移到neovim
 -----------------
+```shell
 mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
 ln -s ~/.vim $XDG_CONFIG_HOME/nvim
 ln -s ~/.vim/vimrc $XDG_CONFIG_HOME/nvim/init.vim
+```
