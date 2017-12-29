@@ -88,9 +88,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'ervandew/supertab'
 
 " 强大的代码补全插件
-Plug 'tomtom/tlib_vim'
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'garbas/vim-snipmate'
+Plug 'SirVer/ultisnips'
 Plug 'honza/vim-snippets'
 
 call plug#end()

@@ -32,6 +32,10 @@ supertab
 
 : 增强 tab 键的功能，配合自动补齐插件使用
 
+ultisnips
+
+: 强大的代码补全
+
 从vim迁移到neovim
 -----------------
 ```shell
