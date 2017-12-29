@@ -32,6 +32,9 @@ set nowritebackup
 set t_Co=256
 colorscheme molokai
 
+" 高亮搜索目标
+set hlsearch
+
 " 将 tab 显示为 >-
 ret list listchars=tab:>-
 
@@ -39,6 +42,7 @@ ret list listchars=tab:>-
 filetype plugin on
 
 " ----------- 设置常用快捷键 -------------- "
+let mapleader = ";"
 
 " 当前行向下移动
 nnoremap <c-j> :m+<CR>==
@@ -50,17 +54,15 @@ nnoremap <c-k> :m-2<CR>==
 inoremap <c-k> <Esc>:m+<CR>==gi
 vnoremap <c-k> :m-2<CR>gv=gv
 
-let mapleader = ";"
-
 " ----------------------------------------- "
 
 " 高亮当前光标所在行
-" set cursorline
-" hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=yellow guibg=NONE guifg=NONE
+set cursorline
+hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=yellow guibg=NONE guifg=NONE
 
 " 高亮当前光标所在列
-" set cursorcolumn
-" hi CursorColumn cterm=NONE ctermbg=darkgrey ctermfg=white guibg=NONE guifg=NONE
+set cursorcolumn
+hi CursorColumn cterm=NONE ctermbg=darkgrey ctermfg=white guibg=NONE guifg=NONE
 
 " ------------- 插件管理 ------------------ "
 call plug#begin('~/.vim/plugged')
@@ -82,6 +84,15 @@ Plug 'vim-airline/vim-airline-themes'
 " 注释助手插件
 Plug 'scrooloose/nerdcommenter'
 
+" 增强 Tab键 插件
+Plug 'ervandew/supertab'
+
+" 强大的代码补全插件
+Plug 'tomtom/tlib_vim'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'garbas/vim-snipmate'
+Plug 'honza/vim-snippets'
+
 call plug#end()
 " ----------------------------------------- "
 
@@ -92,26 +103,3 @@ let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 " 设置状态栏的主题
 let g:airline_theme = 'molokai'
-
-" --------------- 开启 NERDComment ------------ "
-" Add spaces after comment delimiters by default
-let g:NERDSpaceDelims = 1
-
-" Use compact syntax for prettified multi-line comments
-let g:NERDCompactSexyComs = 1
-
-" Align line-wise comment delimiters flush left instead of following code indentation
-let g:NERDDefaultAlign = 'left'
-
-" Set a language to use its alternate delimiters by default
-let g:NERDAltDelims_java = 1
-
-" Add your own custom formats or override the defaults
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-
-" Allow commenting and inverting empty lines (useful when commenting a region)
-let g:NERDCommentEmptyLines = 1
-
-" Enable trimming of trailing whitespace when uncommenting
-let g:NERDTrimTrailingWhitespace = 1
-" ---------------------------------------------- "
