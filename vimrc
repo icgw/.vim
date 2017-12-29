@@ -42,7 +42,6 @@ ret list listchars=tab:>-
 filetype plugin on
 
 " ----------- 设置常用快捷键 -------------- "
-let mapleader = ";"
 
 " 当前行向下移动
 nnoremap <c-j> :m+<CR>==
@@ -96,7 +95,6 @@ call plug#end()
 
 " 开启自动补全插件 deoplete
 let g:deoplete#enable_at_startup = 1
-
 " 开启插件 vim-airline
 let g:airline#extensions#tabline#enabled = 1
 " 设置状态栏的主题
