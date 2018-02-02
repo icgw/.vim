@@ -1,1 +1,0 @@
-/Users/icgw/.vim/vimrc
