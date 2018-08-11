@@ -41,7 +41,7 @@ ret list listchars=tab:>-
 " 自动检测文件类型
 filetype plugin on
 
-# 将第81列提示换行
+" 将第81列提示换行
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
