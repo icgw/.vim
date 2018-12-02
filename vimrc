@@ -10,11 +10,22 @@ set number
 syntax enable
 syntax on
 
-" I like 4 stops
+" 按下一个 tab 之后，显示出来相当于几个空格，默认 8 个
 set tabstop=4
 
-" I like 4 spaces for indenting
+" 每一级缩进的长度
 set shiftwidth=4
+
+" 在编辑模式下，按退格键时，退回缩进的长度。
+set softtabstop=4
+
+" 设置 expandtab 时，缩进用空格来表示；设置 noexpandtabd 则用制表符表示。
+set expandtab
+
+" 将制表符 (tab) 显示：▸-；回车符 (eol) 显示为：↩︎；行尾空白符 (trail) 显示为：-
+set list listchars=tab:▸-,eol:↩︎,trail:-,extends:»,precedes:«,space:␣
+" 将 tab 显示为 >-
+" set list listchars=tab:>-
 
 set encoding=utf-8
 
@@ -35,8 +46,6 @@ colorscheme molokai
 " 高亮搜索目标
 set hlsearch
 
-" 将 tab 显示为 >-
-ret list listchars=tab:>-
 
 " 自动检测文件类型
 filetype plugin on
@@ -119,3 +128,10 @@ let g:deoplete#enable_at_startup = 1
 let g:airline#extensions#tabline#enabled = 1
 " 设置状态栏的主题
 let g:airline_theme = 'molokai'
+
+" ----------- "
+set grepprg=grep\ -nH\ $*
+
+let g:tex_flavor='latex'
+set iskeyword+=:
+autocmd BufEnter *.tex set sw=2
