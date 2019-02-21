@@ -1,31 +1,30 @@
-" 
-" Author: Guowei Chen
-" -------------------
+" -------------------------
+" @作者：陈国威
+" @Author: Guowei Chen
+" @E-mail: icgw@outlook.com
+" -------------------------
 
 " Use Vim settings, rather than Vi settings (much better!).
 set nocompatible
 
 set number
 
-syntax enable
-syntax on
 
 " 按下一个 tab 之后，显示出来相当于几个空格，默认 8 个
-set tabstop=4
+set tabstop=2
 
 " 每一级缩进的长度
-set shiftwidth=4
+set shiftwidth=2
 
 " 在编辑模式下，按退格键时，退回缩进的长度。
-set softtabstop=4
+set softtabstop=2
 
 " 设置 expandtab 时，缩进用空格来表示；设置 noexpandtabd 则用制表符表示。
 set expandtab
 
 " 将制表符 (tab) 显示：▸-；回车符 (eol) 显示为：↩︎；行尾空白符 (trail) 显示为：-
-set list listchars=tab:▸-,eol:↩︎,trail:-,extends:»,precedes:«,space:␣
-" 将 tab 显示为 >-
-" set list listchars=tab:>-
+set list listchars=tab:▸-,eol:↩︎,trail:-
+" set list listchars=tab:▸-,eol:↩︎,trail:-,extends:»,precedes:«,space:␣
 
 set encoding=utf-8
 
@@ -46,14 +45,22 @@ colorscheme molokai
 " 高亮搜索目标
 set hlsearch
 
+set statusline=%F%m%r%h%w%=\ [TYPE=%Y]\ %{\"[ENCODING=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [FORMAT=%{&ff}]\ [ASCII=%03.3b]\ [HEX=%02.2B]\ [POS=%04l,%04v][%p%%]\ [LINES=%L]
+
+" set laststatus=0, 不显示状态行
+" set laststatus=1, 仅当窗口多于一行时，显示状态行
+" set laststatus=2, 总是显示状态行
+set laststatus=2
 
 " 自动检测文件类型
 filetype plugin on
 
+syntax enable
+syntax on
+
 " 将第81列提示换行
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
-
 
 " ----------- 设置常用快捷键 -------------- "
 
@@ -82,7 +89,18 @@ nnoremap <c-z> u
 inoremap <c-z> <Esc>u==gi
 vnoremap <c-z> ugv=gv 
 
-" ----------------------------------------- "
+call plug#begin('~/.vim/plugged')
+
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+call plug#end()
+
+let g:UltiSnipsExpandTrigger = "<c-e>"
+let g:UltiSnipsJumpForwardTrigger = "<c-j>"
+let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+
+let g:UltiSnipsSnippetDirectories = ["icgw-snippets"]
+" --------------------------------------------------- "
 
 " 高亮当前光标所在行
 set cursorline
@@ -91,47 +109,3 @@ hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=yellow guibg=NONE guifg=NONE
 " 高亮当前光标所在列
 set cursorcolumn
 hi CursorColumn cterm=NONE ctermbg=darkgrey ctermfg=white guibg=NONE guifg=NONE
-
-" ------------- 插件管理 ------------------ "
-call plug#begin('~/.vim/plugged')
-
-" 自动补全插件 
-if has('nvim')
-	Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-else
-	Plug 'Shougo/deoplete.nvim'
-	Plug 'roxma/nvim-yarp'
-	Plug 'roxma/vim-hug-neovim-rpc'
-endif
-
-" 状态栏插件
-Plug 'vim-airline/vim-airline'
-" 状态栏主题插件
-Plug 'vim-airline/vim-airline-themes'
-
-" 注释助手插件
-Plug 'scrooloose/nerdcommenter'
-
-" 增强 Tab键 插件
-Plug 'ervandew/supertab'
-
-" 强大的代码补全插件
-Plug 'SirVer/ultisnips'
-Plug 'honza/vim-snippets'
-
-call plug#end()
-" ----------------------------------------- "
-
-" 开启自动补全插件 deoplete
-let g:deoplete#enable_at_startup = 1
-" 开启插件 vim-airline
-let g:airline#extensions#tabline#enabled = 1
-" 设置状态栏的主题
-let g:airline_theme = 'molokai'
-
-" ----------- "
-set grepprg=grep\ -nH\ $*
-
-let g:tex_flavor='latex'
-set iskeyword+=:
-autocmd BufEnter *.tex set sw=2

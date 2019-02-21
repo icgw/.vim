@@ -1,3 +1,8 @@
+# 常用按键
+* w: go to the start of the following [w]ord.
+* b: go to the [b]eginning of this word.
+* e: go to the [e]nd of this word.
+
 # Vim 使用与配置 #
 
 ## 快捷键一览 ##
