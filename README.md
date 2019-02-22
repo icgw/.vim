@@ -1,27 +1,8 @@
+
 # 常用按键
 * w: go to the start of the following [w]ord.
 * b: go to the [b]eginning of this word.
 * e: go to the [e]nd of this word.
-
-# Vim 使用与配置 #
-
-## 快捷键一览 ##
-
-* `C - j` 将当前行的内容往下移动
-* `C - k` 将当前行的内容往上移动
-* `C - f` 向前翻页
-* `C - b` 往回翻页
-* `\ - cc` 注释
-* `\ - cu` 取消注释
-* `\ - c<space>` 在注释、取消注释切换
-* `C - s` 保存文件
-* `C - w`, `ZZ` 保存并退出文件
-* `%` 跳转至相匹配的括号
-* `q:` 显示历史命令
-* `\ - ll' 编译 tex 文件
-* '\ - lv' 预览当前文件名的 pdf 文件。
-
-> `C` 表示 `Ctrl`
 
 ## 插件 ##
 
@@ -33,11 +14,3 @@
 	- 增强 tab 键的功能，配合自动补齐插件使用
 * [`ultisnips`](https://github.com/SirVer/ultisnips)
 	- 强大的代码补全插件
-
-## 从vim迁移到neovim ##
-
-```shell
-mkdir -p ${XDG_CONFIG_HOME:=$HOME/.config}
-ln -s ~/.vim $XDG_CONFIG_HOME/nvim
-ln -s ~/.vim/vimrc $XDG_CONFIG_HOME/nvim/init.vim
-```

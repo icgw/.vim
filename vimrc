@@ -1,14 +1,14 @@
-" -------------------------
+" ------------------------------------------------------------------------------
 " @作者：陈国威
 " @Author: Guowei Chen
 " @E-mail: icgw@outlook.com
-" -------------------------
+" ------------------------------------------------------------------------------
 
-" Use Vim settings, rather than Vi settings (much better!).
+" 只是用 vim 设置，不兼容 vi
 set nocompatible
 
+" 显示行号
 set number
-
 
 " 按下一个 tab 之后，显示出来相当于几个空格，默认 8 个
 set tabstop=2
@@ -26,19 +26,20 @@ set expandtab
 set list listchars=tab:▸-,eol:↩︎,trail:-
 " set list listchars=tab:▸-,eol:↩︎,trail:-,extends:»,precedes:«,space:␣
 
+" 设置编码为 UTF-8
 set encoding=utf-8
 
-" Match the bracket
+" 匹配当前对应括号
 set showmatch
 
-" show the cursor position all the time 
-set ruler
+" 状态栏右下方显示标尺（光标位置信息）
+" set ruler
 
-" do not keep a backup file
+" 不产生以 *.ext~ 扩展名的备份文件
 set nobackup
 set nowritebackup
 
-" terminal color
+" 设置终端的色彩
 set t_Co=256
 colorscheme molokai
 
@@ -52,55 +53,33 @@ set statusline=%F%m%r%h%w%=\ [TYPE=%Y]\ %{\"[ENCODING=\".(&fenc==\"\"?&enc:&fenc
 " set laststatus=2, 总是显示状态行
 set laststatus=2
 
-" 自动检测文件类型
-filetype plugin on
-
-syntax enable
-syntax on
+" 设置语法高亮
+if !exists('g:syntax_on')
+  syntax enable
+endif
 
 " 将第81列提示换行
 highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 match OverLength /\%81v.\+/
 
-" ----------- 设置常用快捷键 -------------- "
-
-" 当前行向下移动
-nnoremap <c-j> :m+<CR>==
-inoremap <c-j> <Esc>:m+<CR>==gi
-vnoremap <c-j> :m'>+<CR>gv=gv
-
-" 当前行向上移动
-nnoremap <c-k> :m-2<CR>==
-inoremap <c-k> <Esc>:m+<CR>==gi
-vnoremap <c-k> :m-2<CR>gv=gv
-
-" 保存该文件
-nnoremap <c-s> :w<CR>==
-inoremap <c-s> <Esc>:w<CR>==gi
-vnoremap <c-s> :w<CR>gv=gv
-
-" 保存并退出文件
-nnoremap <c-w> :wq<CR>==
-inoremap <c-w> <Esc>:wq<CR>==gi
-vnoremap <c-w> :wq<CR>gv=gv
-
-" 撤销上一步操作 undo，对应 <ctrl - r> 恢复上一步操作 redo
-nnoremap <c-z> u
-inoremap <c-z> <Esc>u==gi
-vnoremap <c-z> ugv=gv 
-
+" ------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
-
 Plug 'SirVer/ultisnips'
-
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-surround'
+Plug 'scrooloose/nerdcommenter'
+Plug 'airblade/vim-gitgutter'
 call plug#end()
 
-let g:UltiSnipsExpandTrigger = "<c-e>"
-let g:UltiSnipsJumpForwardTrigger = "<c-j>"
-let g:UltiSnipsJumpBackwardTrigger = "<c-k>"
+" 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
+filetype plugin indent on
 
-let g:UltiSnipsSnippetDirectories = ["icgw-snippets"]
-" --------------------------------------------------- "
+let g:UltiSnipsExpandTrigger       = "<C-e>"
+let g:UltiSnipsJumpForwardTrigger  = "<C-h>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-l>"
+
+let g:UltiSnipsSnippetDirectories  = [ "icgw-snippets" ]
+" ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
 set cursorline
