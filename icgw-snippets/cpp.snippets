@@ -1,12 +1,20 @@
-priority 0
+priority 1
+
+extends c
 ################################################################################
 #                               Guowei's Snippets                              #
 ################################################################################
 
-snippet #! "Shebang header for python script" b
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-$0
+snippet cl "class .. (class)"
+class ${1:`!p snip.rv = snip.basename or "name"`}
+{
+public:
+	${1/(\w+).*/$1/} (${2:arguments});
+	virtual ~${1/(\w+).*/$1/} ();
+
+private:
+	${0:/* data */}
+};
 endsnippet
 
 # vim:ft=snippets:

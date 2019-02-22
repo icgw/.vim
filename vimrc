@@ -1,4 +1,7 @@
 " ------------------------------------------------------------------------------
+"  陈国威定制的 Vim 配置文件
+"  Vim configure file written by Guowei Chen
+"
 " @作者：陈国威
 " @Author: Guowei Chen
 " @E-mail: icgw@outlook.com
@@ -38,9 +41,12 @@ set showmatch
 " 不产生以 *.ext~ 扩展名的备份文件
 set nobackup
 set nowritebackup
+" 不产生交换文件
+set noswapfile
 
-" 设置终端的色彩
+" 设置色彩数量
 set t_Co=256
+" 设置 vim 的主题
 colorscheme molokai
 
 " 高亮搜索目标
@@ -52,6 +58,9 @@ set statusline=%F%m%r%h%w%=\ [TYPE=%Y]\ %{\"[ENCODING=\".(&fenc==\"\"?&enc:&fenc
 " set laststatus=1, 仅当窗口多于一行时，显示状态行
 " set laststatus=2, 总是显示状态行
 set laststatus=2
+
+" 状态栏右下方显示键盘输入
+set showcmd
 
 " 设置语法高亮
 if !exists('g:syntax_on')
@@ -69,6 +78,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
