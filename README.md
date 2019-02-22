@@ -1,16 +1,37 @@
+常用 Vim 命令列表
+===============
 
-# 常用按键
-* w: go to the start of the following [w]ord.
-* b: go to the [b]eginning of this word.
-* e: go to the [e]nd of this word.
+## 移动 (Normal) 正常模式
+定位光标到下一个位置，以下命令称为 `motion` 。
 
-## 插件 ##
+|        `motion`        | 演示                           |
+| :--------------------: | :----------------------------- |
+| `f`*x*, `F`*x*, `t`*x* | ![](.assets/fxFxtx.gif)        |
+|        `w`, `b`        | ![](.assets/wb.gif)            |
+|     `0`, `$`, `^`      | ![](.assets/0$^$.gif)          |
+|        `)`, `(`        | ![](.assets/next_sentence.gif) |
 
-* [`airline`](https://github.com/vim-airline/vim-airline) 美化状态栏
-* [`deoplete`](https://github.com/Shougo/deoplete.nvim)
-	- vim 的版本 8+，需要 python3 支持；需要 neovim-python 
-* [`NERDComment`](https://github.com/scrooloose/nerdcommenter) 注释
-* [`supertab`](https://github.com/ervandew/supertab)
-	- 增强 tab 键的功能，配合自动补齐插件使用
-* [`ultisnips`](https://github.com/SirVer/ultisnips)
-	- 强大的代码补全插件
+## 输入 (Insert) 插入模式
+
+`i`, `I`, `a`, `A`, `o`, `O`, `c`\<*motion*\>
+
+## 选择 (Visual) 选择模式
+| Visual Mode | 演示                         |
+| :---------: | :--------------------------- |
+| `c` or `s`  | ![](.assets/visual_cors.gif) |
+|  `>`, `<`   | ![](.assets/vindent.gif)     |
+
+## 插件功能
+
+|  NERDCommenter   | 演示                |
+| :--------------: | :------------------ |
+| \<*count*\>`\cs` | ![](.assets/cs.gif) |
+| \<*count*\>`\cu` | ![](.assets/cu.gif) |
+------------------------------------------
+| vim-multiple-cursors | 演示                 |
+| :------------------: | :------------------- |
+|        `C-n`         | ![](.assets/c-n.gif) |
+-----------------------------------------------
+|       vim-surround       | 演示                       |
+| :----------------------: | :------------------------- |
+| `cs`\<*init*\>\<*subs*\> | ![](.assets/csbracket.gif) |
