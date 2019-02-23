@@ -18,10 +18,10 @@
 
 |        `motion`        |                                                          Example                                                          |
 | :--------------------: | :-----------------------------------------------------------------------------------------------------------------------: |
-| `f`*x*, `F`*x*, `t`*x* |        <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/fxFxtx.gif" width="64%" alt="fxFxtx"/>        |
-|        `w`, `b`        |            <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/wb.gif" width="64%" alt="wb"/>            |
-|     `0`, `$`, `^`      |     <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/0%24%5E%24.gif" width="64%" alt="0\$\^\$"/>      |
-|        `)`, `(`        | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/next_sentence.gif" width="64%" alt="next-sentence"/> |
+| `f`*x*, `F`*x*, `t`*x* |        <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/fxFxtx.gif" width="50%" alt="fxFxtx"/>        |
+|        `w`, `b`        |            <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/wb.gif" width="50%" alt="wb"/>            |
+|     `0`, `$`, `^`      |     <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/0%24%5E%24.gif" width="50%" alt="0\$\^\$"/>      |
+|        `)`, `(`        | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/next_sentence.gif" width="50%" alt="next-sentence"/> |
 
 ## 撤销、恢复（键入）、重复（命令）
 - `u` 撤销当前键入操作；
@@ -45,28 +45,28 @@
 
 选择模式下的常用操作
 ====================
-- `d` 剪切选择的内容；
-- `y` 拷贝选择的内容；
+- `d` 剪切选择的内容，拷贝到剪贴板；
+- `y` 拷贝选择的内容到剪贴板。
 
 |   Visual   |                                                    Example                                                     |
 | :--------: | :------------------------------------------------------------------------------------------------------------: |
-| `c` or `s` | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/visual_cors.gif" width="64%" alt="cors"/> |
-|  `>`, `<`  |   <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/vindent.gif" width="64%" alt="\>\<"/>   |
+| `c` or `s` | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/visual_cors.gif" width="50%" alt="cors"/> |
+|  `>`, `<`  |   <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/vindent.gif" width="50%" alt="\>\<"/>   |
 
 插件功能
 ========
 ## 批量注释、取消注释
 |  NERDCommenter   |                                               Example                                               |
 | :--------------: | :-------------------------------------------------------------------------------------------------: |
-| \<*count*\>`\cs` | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/cs.gif" width="64%" alt="cs"/> |
-| \<*count*\>`\cu` | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/cu.gif" width="64%" alt="cu"/> |
+| \<*count*\>`\cs` | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/cs.gif" width="50%" alt="cs"/> |
+| \<*count*\>`\cu` | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/cu.gif" width="50%" alt="cu"/> |
 
 ## 多处同时编辑
 |   vim-multiple-cursors   |                                                Example                                                |
 | :----------------------: | :---------------------------------------------------------------------------------------------------: |
-| 选择内容之后键入`Crtl-n` | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/c-n.gif" width="64%" alt="c-n"/> |
+|  选择内容并键入`Crtl-n`  | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/c-n.gif" width="50%" alt="c-n"/> |
 
 ## 括号操作
 |       vim-surround       |                                                      Example                                                      |
 | :----------------------: | :---------------------------------------------------------------------------------------------------------------: |
-| `cs`\<*init*\>\<*subs*\> | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/csbracket.gif" width="64%" alt="csbracket"/> |
+| `cs`\<*init*\>\<*subs*\> | <img src="https://raw.githubusercontent.com/icgw/.vim/master/.assets/csbracket.gif" width="50%" alt="csbracket"/> |
