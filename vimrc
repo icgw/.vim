@@ -35,6 +35,9 @@ set encoding=utf-8
 " 匹配当前对应括号
 set showmatch
 
+" 允许回退缩进、行尾、插入的开始部分
+set backspace=indent,eol,start
+
 " 状态栏右下方显示标尺（光标位置信息）
 " set ruler
 
@@ -52,12 +55,12 @@ colorscheme molokai
 " 高亮搜索目标
 set hlsearch
 
-set statusline=%F%m%r%h%w%=\ [TYPE=%Y]\ %{\"[ENCODING=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [FORMAT=%{&ff}]\ [ASCII=%03.3b]\ [HEX=%02.2B]\ [POS=%04l,%04v][%p%%]\ [LINES=%L]
+" set statusline=%F%m%r%h%w%=\ [TYPE=%Y]\ %{\"[ENCODING=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [FORMAT=%{&ff}]\ [ASCII=%03.3b]\ [HEX=%02.2B]\ [POS=%04l,%04v][%p%%]\ [LINES=%L]
 
 " set laststatus=0, 不显示状态行
 " set laststatus=1, 仅当窗口多于一行时，显示状态行
 " set laststatus=2, 总是显示状态行
-set laststatus=2
+" set laststatus=2
 
 " 状态栏右下方显示键盘输入
 set showcmd
@@ -79,6 +82,8 @@ Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
+Plug 'w0rp/ale'
+Plug 'vim-airline/vim-airline'
 call plug#end()
 
 " 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
@@ -87,8 +92,9 @@ filetype plugin indent on
 let g:UltiSnipsExpandTrigger       = "<C-e>"
 let g:UltiSnipsJumpForwardTrigger  = "<C-h>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-l>"
-
 let g:UltiSnipsSnippetDirectories  = [ "icgw-snippets" ]
+
+let g:airline#extensions#ale#enabled = 1
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
