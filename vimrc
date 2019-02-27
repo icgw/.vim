@@ -1,11 +1,11 @@
 " ------------------------------------------------------------------------------
-"  陈国威定制的 Vim 配置文件
-"  Vim configure file written by Guowei Chen
+"  Configuration file for Vim.
+"  Copyright (C) 2019 Guowei Chen <icgw@outlook.com>
 "
-" @作者：陈国威
-" @Author: Guowei Chen
-" @E-mail: icgw@outlook.com
+"  Distributed under terms of the MIT license.
 " ------------------------------------------------------------------------------
+let g:user  = "Guowei Chen"
+let g:email = "icgw@outlook.com"
 
 " 只是用 vim 设置，不兼容 vi
 set nocompatible
