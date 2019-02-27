@@ -95,6 +95,9 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-l>"
 let g:UltiSnipsSnippetDirectories  = [ "icgw-snippets" ]
 
 let g:airline#extensions#ale#enabled = 1
+
+let g:user  = "Guowei Chen"
+let g:email = "icgw@outlook.com"
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
