@@ -50,7 +50,9 @@ set noswapfile
 " 设置色彩数量
 set t_Co=256
 " 设置 vim 的主题
-colorscheme molokai
+colorscheme one
+let g:one_allow_italics = 1
+set background=dark
 
 " 高亮搜索目标
 set hlsearch
@@ -98,6 +100,8 @@ let g:airline#extensions#ale#enabled = 1
 
 let g:user  = "Guowei Chen"
 let g:email = "icgw@outlook.com"
+
+let g:airline_theme = 'one'
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
