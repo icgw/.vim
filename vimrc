@@ -86,6 +86,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'godlygeek/tabular'
 call plug#end()
 
 " 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
