@@ -48,9 +48,9 @@ set nowritebackup
 set noswapfile
 
 " 设置色彩数量
-set t_Co=256
-" 设置 vim 的主题
-colorscheme one
+" set t_Co=256
+" 设置 vim 的主题: molokai, one, gruvbox
+colorscheme gruvbox
 let g:one_allow_italics = 1
 set background=dark
 
@@ -99,12 +99,7 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-l>"
 let g:UltiSnipsSnippetDirectories  = [ "icgw-snippets" ]
 
 let g:airline#extensions#ale#enabled = 1
-
-let g:user  = "Guowei Chen"
-let g:email = "icgw@outlook.com"
-
-let g:airline_theme = 'one'
-
+let g:airline_theme = 'gruvbox'
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
