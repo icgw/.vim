@@ -50,7 +50,9 @@ set noswapfile
 " 设置色彩数量
 set t_Co=256
 " 设置 vim 的主题
-colorscheme molokai
+colorscheme one
+let g:one_allow_italics = 1
+set background=dark
 
 " 高亮搜索目标
 set hlsearch
@@ -84,6 +86,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
+Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
+Plug 'godlygeek/tabular'
 call plug#end()
 
 " 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
@@ -95,6 +99,12 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-l>"
 let g:UltiSnipsSnippetDirectories  = [ "icgw-snippets" ]
 
 let g:airline#extensions#ale#enabled = 1
+
+let g:user  = "Guowei Chen"
+let g:email = "icgw@outlook.com"
+
+let g:airline_theme = 'one'
+
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
