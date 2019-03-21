@@ -30,7 +30,7 @@ set list listchars=tab:▸-,eol:↩︎,trail:-
 " set list listchars=tab:▸-,eol:↩︎,trail:-,extends:»,precedes:«,space:␣
 
 " 设置编码为 UTF-8
-set encoding=utf-8
+set encoding=utf-8 nobomb
 
 " 匹配当前对应括号
 set showmatch
@@ -48,14 +48,19 @@ set nowritebackup
 set noswapfile
 
 " 设置色彩数量
-" set t_Co=256
+set t_Co=256
 " 设置 vim 的主题: molokai, one, gruvbox
 colorscheme gruvbox
-let g:one_allow_italics = 1
+" let g:one_allow_italics = 1
 set background=dark
 
 " 高亮搜索目标
 set hlsearch
+
+" 设置折叠代码的方法 {{{ code }}}；空格表示折叠或展开
+set foldmethod=marker
+nnoremap <space> za
+
 
 " set statusline=%F%m%r%h%w%=\ [TYPE=%Y]\ %{\"[ENCODING=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [FORMAT=%{&ff}]\ [ASCII=%03.3b]\ [HEX=%02.2B]\ [POS=%04l,%04v][%p%%]\ [LINES=%L]
 
@@ -73,7 +78,7 @@ if !exists('g:syntax_on')
 endif
 
 " 将第81列提示换行
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+highlight OverLength ctermbg=darkred ctermfg=white
 match OverLength /\%81v.\+/
 
 " ------------------------------------------------------------------------------
@@ -93,19 +98,19 @@ call plug#end()
 " 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
 filetype plugin indent on
 
-let g:UltiSnipsExpandTrigger       = "<C-e>"
-let g:UltiSnipsJumpForwardTrigger  = "<C-h>"
-let g:UltiSnipsJumpBackwardTrigger = "<C-l>"
-let g:UltiSnipsSnippetDirectories  = [ "icgw-snippets" ]
+let g:UltiSnipsExpandTrigger         = "<C-e>"
+let g:UltiSnipsJumpForwardTrigger    = "<C-h>"
+let g:UltiSnipsJumpBackwardTrigger   = "<C-l>"
+let g:UltiSnipsSnippetDirectories    = [ "icgw-snippets" ]
 
 let g:airline#extensions#ale#enabled = 1
-let g:airline_theme = 'gruvbox'
+let g:airline_theme                  = 'gruvbox'
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
 set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgrey ctermfg=yellow guibg=NONE guifg=NONE
+highlight CursorLine cterm=NONE ctermbg=darkgrey ctermfg=NONE
 
 " 高亮当前光标所在列
 set cursorcolumn
-hi CursorColumn cterm=NONE ctermbg=darkgrey ctermfg=white guibg=NONE guifg=NONE
+highlight CursorColumn cterm=NONE ctermbg=darkgrey ctermfg=NONE
