@@ -4,8 +4,9 @@
 "
 "  Distributed under terms of the MIT license.
 " ------------------------------------------------------------------------------
-let g:user  = "Guowei Chen"
-let g:email = "icgw@outlook.com"
+let g:user    = "Guowei Chen"
+let g:email   = "icgw@outlook.com"
+let g:license = "GPL"
 
 " 只是用 vim 设置，不兼容 vi
 set nocompatible
@@ -57,10 +58,8 @@ set background=dark
 " 高亮搜索目标
 set hlsearch
 
-" 设置折叠代码的方法 {{{ code }}}；空格表示折叠或展开
+" 设置折叠代码的方法 {{{ code }}}
 set foldmethod=marker
-nnoremap <space> za
-
 
 " set statusline=%F%m%r%h%w%=\ [TYPE=%Y]\ %{\"[ENCODING=\".(&fenc==\"\"?&enc:&fenc).((exists(\"+bomb\")\ &&\ &bomb)?\"+\":\"\").\"]\"}\ [FORMAT=%{&ff}]\ [ASCII=%03.3b]\ [HEX=%02.2B]\ [POS=%04l,%04v][%p%%]\ [LINES=%L]
 
@@ -105,6 +104,9 @@ let g:UltiSnipsSnippetDirectories    = [ "icgw-snippets" ]
 
 let g:airline#extensions#ale#enabled = 1
 let g:airline_theme                  = 'gruvbox'
+
+" 注释时自动加空格, \cl, \cs, \cu 配合使用
+let g:NERDSpaceDelims                = 1
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
