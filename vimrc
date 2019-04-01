@@ -96,6 +96,7 @@ call plug#end()
 
 " 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
 filetype plugin indent on
+set cinoptions=g0
 
 let g:UltiSnipsExpandTrigger         = "<C-e>"
 let g:UltiSnipsJumpForwardTrigger    = "<C-h>"
