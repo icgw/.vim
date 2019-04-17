@@ -32,6 +32,7 @@ set list listchars=tab:▸-,eol:↩︎,trail:-
 
 " 设置编码为 UTF-8
 set encoding=utf-8 nobomb
+set fileencoding=utf-8 nobomb
 
 " 匹配当前对应括号
 set showmatch
@@ -76,9 +77,9 @@ if !exists('g:syntax_on')
   syntax enable
 endif
 
-" 将第81列提示换行
+" 将第121列提示换行
 highlight OverLength ctermbg=darkred ctermfg=white
-match OverLength /\%81v.\+/
+match OverLength /\%121v.\+/
 
 " ------------------------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
