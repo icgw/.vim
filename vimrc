@@ -110,6 +110,8 @@ let g:airline_theme                  = 'gruvbox'
 
 " 注释时自动加空格, \cl, \cs, \cu 配合使用
 let g:NERDSpaceDelims                = 1
+
+let g:rust_recommended_style = 0
 " ------------------------------------------------------------------------------
 
 " 高亮当前光标所在行
