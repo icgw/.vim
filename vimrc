@@ -6,7 +6,7 @@
 " ------------------------------------------------------------------------------
 let g:user    = "Guowei Chen"
 let g:email   = "icgw@outlook.com"
-let g:license = "GPL"
+let g:license = "MIT"
 
 " 只是用 vim 设置，不兼容 vi
 set nocompatible
@@ -93,6 +93,7 @@ Plug 'w0rp/ale'
 Plug 'vim-airline/vim-airline'
 Plug 'scrooloose/nerdtree', { 'on': 'NERDTreeToggle' }
 Plug 'godlygeek/tabular'
+Plug 'rust-lang/rust.vim'
 call plug#end()
 
 " 自动检测文件类型、加载 indent.vim、加载 ftplugin.vim
