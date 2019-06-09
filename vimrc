@@ -8,11 +8,18 @@ let g:user    = "Guowei Chen"
 let g:email   = "icgw@outlook.com"
 let g:license = "MIT"
 
+" 避免 vim 8.1.1365 版本之前出现的安全漏洞
+set modelines=0
+set nomodeline
+
 " 只是用 vim 设置，不兼容 vi
 set nocompatible
 
 " 显示行号
 set number
+
+" 当 :q, :w, 或者 :wq 失败时，弹出交互选项
+set confirm
 
 " 按下一个 tab 之后，显示出来相当于几个空格，默认 8 个
 set tabstop=2
