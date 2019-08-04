@@ -345,7 +345,7 @@ function <SID>TExpandVars()
 	let l:month      = strftime("%m")
 	let l:monshort   = strftime("%b")
 	let l:monfull    = strftime("%B")
-	let l:time       = strftime("%H:%M")
+	let l:time       = strftime("%H:%M:%S %z")
 	let l:date       = exists("g:dateformat") ? strftime(g:dateformat) :
 				     \ (l:year . "-" . l:month . "-" . l:day)
 	let l:fdate      = l:date . " " . l:time

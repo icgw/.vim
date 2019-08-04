@@ -6,7 +6,11 @@
 " ------------------------------------------------------------------------------
 let g:user    = "Guowei Chen"
 let g:email   = "icgw@outlook.com"
-let g:license = "MIT"
+let g:license = "GPL"
+
+autocmd FileType java let b:jcommenter_class_author="Guowei Chen (icgw@outlook.com)"
+autocmd FileType java let b:jcommenter_file_author="Guowei Chen (icgw@outlook.com)"
+autocmd FileType java map <C-c> :call JCommentWriter()<CR>
 
 " 避免 vim 8.1.1365 版本之前出现的安全漏洞
 set modelines=0
