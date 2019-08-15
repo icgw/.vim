@@ -8,8 +8,9 @@ let g:user    = "Guowei Chen"
 let g:email   = "icgw@outlook.com"
 let g:license = "GPL"
 
-autocmd FileType java let b:jcommenter_class_author="Guowei Chen (icgw@outlook.com)"
-autocmd FileType java let b:jcommenter_file_author="Guowei Chen (icgw@outlook.com)"
+" 设置 Java Commenter Writer
+autocmd FileType java let b:jcommenter_class_author = "Guowei Chen (icgw@outlook.com)"
+autocmd FileType java let b:jcommenter_file_author  = "Guowei Chen (icgw@outlook.com)"
 autocmd FileType java map <C-c> :call JCommentWriter()<CR>
 
 " 避免 vim 8.1.1365 版本之前出现的安全漏洞
@@ -60,8 +61,14 @@ set nowritebackup
 " 不产生交换文件
 set noswapfile
 
-" 设置色彩数量
-set t_Co=256
+if has("termguicolors")
+  " 启用真彩模式
+  set termguicolors
+else
+  " 设置色彩数量
+  set t_Co=256
+endif
+
 " 设置 vim 的主题: molokai, one, gruvbox
 colorscheme gruvbox
 " let g:one_allow_italics = 1
@@ -69,6 +76,9 @@ set background=dark
 
 " 高亮搜索目标
 set hlsearch
+
+" 设置英语拼写检查
+set spell spelllang=en
 
 " 设置折叠代码的方法 {{{ code }}}
 set foldmethod=marker
